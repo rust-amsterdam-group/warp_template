@@ -28,6 +28,6 @@ async fn main() {
 
 fn with_http_client(
     client: Arc<Client>,
-) -> impl Filter<Extract=(Arc<Client>, ), Error=std::convert::Infallible> + Clone {
+) -> impl Filter<Extract = (Arc<Client>,), Error = std::convert::Infallible> + Clone {
     warp::any().map(move || client.clone())
 }
